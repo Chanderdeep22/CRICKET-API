@@ -150,22 +150,3 @@ function enterTheMatchCode()
  }
 
 /* check Score end */
- function players()
-{
-    var xmlhttp=new XMLHttpRequest();
-     xmlhttp.onreadystatechange=function(){
-      if(this.readyState==4 && this.status==200)
-       {
-         document.getElementById("container").innerHTML=this.responseText;
-        var obj=JSON.parse(this.responseText);
-        var id="<p style='padding:5px;'>"+"<b>Status: </b>"+obj.squad[0].id+"</p>"
-        var name="<p>"+"<b>Score: </b>"+obj.squad[0].name+"</p>"
-        
-        document.getElementById("container").innerHTML=id+name;
-       
-       }
-      
-     };
-     xmlhttp.open("GET", "https://cricapi.com/api/fantasySquad?apikey=anb2yn1mEhYfYmVpe3W6Cxxfb492&unique_id=1034809", true);
-     xmlhttp.send();
- }
